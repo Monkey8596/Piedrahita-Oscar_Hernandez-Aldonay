@@ -1,4 +1,4 @@
 package com.backend.parcial.service;
 
-public class interr {
+public class Service {
 }

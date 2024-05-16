@@ -1,4 +1,4 @@
 package com.backend.parcial.repository;
 
-public class inter {
+public class Repository {
 }
