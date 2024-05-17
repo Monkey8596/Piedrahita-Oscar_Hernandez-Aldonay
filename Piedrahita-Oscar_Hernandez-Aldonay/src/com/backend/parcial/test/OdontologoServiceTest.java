@@ -1,4 +1,4 @@
 package com.backend.parcial.test;
 
-public class Test {
+public class OdontologoServiceTest {
 }
