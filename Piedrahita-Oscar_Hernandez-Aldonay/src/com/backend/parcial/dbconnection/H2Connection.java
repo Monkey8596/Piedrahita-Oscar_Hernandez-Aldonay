@@ -8,14 +8,14 @@ public class H2Connection {
 
     public static Connection getConnection() throws ClassNotFoundException, SQLException {
         Class.forName("org.h2.Driver");
-        return DriverManager.getConnection("jdbc:h2:~/Piedrahita-Oscar_Hernandez-Aldonay", "sa", "sa");
+        return DriverManager.getConnection("jdbc:h2:~/examen", "sa", "sa");
     }
 
     public static void ejecutarScriptInicial() {
         Connection connection = null;
         try {
             Class.forName("org.h2.Driver");
-            connection = DriverManager.getConnection("jdbc:h2:~/Piedrahita-Oscar_Hernandez-Aldonay FROM 'create.sql'", "sa", "sa");
+            connection = DriverManager.getConnection("jdbc:h2:~/examen;INIT=RUNSCRIPT FROM 'create.sql'", "sa", "sa");
 
         } catch (Exception e) {
             e.printStackTrace();

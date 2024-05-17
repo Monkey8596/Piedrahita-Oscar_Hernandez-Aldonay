@@ -15,15 +15,17 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
 
     @Override
     public Odontologo registrar(Odontologo odontologo) {
+
         Connection connection = null;
         Odontologo odontologoRegistrado = null;
+        final String query = "INSERT INTO ODONTOLOGO (MATRICULA,NOMBRE,APELLIDO) VALUES (?, ?, ?)";
 
 
         try{
             connection = H2Connection.getConnection();
             connection.setAutoCommit(false);
 
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO ODONTOLOGO (CALLE, NUMERO, LOCALIDAD, PROVINCIA) VALUES (?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement preparedStatement = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, odontologo.getMatricula());
             preparedStatement.setString(2, odontologo.getNombre());
             preparedStatement.setString(3, odontologo.getApellido());
@@ -70,10 +72,11 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
 
         Connection connection = null;
         List<Odontologo> odontologos = new ArrayList<>();
+        final String queryListado = "SELECT * FROM ODONTOLOGO";
 
         try{
             connection = H2Connection.getConnection();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM ODONTOLOGO");
+            PreparedStatement preparedStatement = connection.prepareStatement(queryListado);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -95,7 +98,7 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
                 ex.printStackTrace();
             }
         }
-        LOGGER.info("Listado de todos los odontolofos: " + odontologos);
+        LOGGER.info("Listado de todos los odontologos: " + odontologos);
 
         return odontologos;
     }
