@@ -13,10 +13,6 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 @SpringBootTest
 class ClinicaOdontologicaApplicationTests {
 
-//	@Test
-//	void contextLoads() {
-//	}
-
 	private OdontologoService odontologoService;
 
 	@Test

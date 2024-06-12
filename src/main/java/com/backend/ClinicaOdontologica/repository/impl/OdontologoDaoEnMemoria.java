@@ -32,6 +32,11 @@ public class OdontologoDaoEnMemoria implements IDao <Odontologo> {
     }
 
     @Override
+    public Odontologo buscarPorId(Long id) {
+        return null;
+    }
+
+    @Override
     public List<Odontologo> listarTodos() {
 
         LOGGER.info("Listado de todos los odontologos en Memoria: " + listaOdontologos);

@@ -14,3 +14,21 @@ id: 1 - matricula: WWW222 - nombre: Pablo - apellido: Neruda
 , 
 id: 2 - matricula: YYY222 - nombre: Cacd Rmilo - apellido: Zapata
 ]
+[2024-06-11 20:01:57] [ INFO ] [OdontologoDaoH2:107] Listado de todos los odontologos: [
+id: 1 - matricula: ABC123 - nombre: Digital - apellido: House
+, 
+id: 2 - matricula: ABC123 - nombre: Oscar - apellido: Piedrahita
+, 
+id: 3 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+]
+[2024-06-11 20:01:57] [ INFO ] [OdontologoDaoH2:30] Se ha registrado el Odontologo En Memoria: 
+id: 3 - matricula: TTT789 - nombre: Memoria - apellido: Mora
+
+[2024-06-11 20:01:57] [ INFO ] [OdontologoDaoH2:42] Se ha registrado el Odontologo: 
+id: 4 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+
+[2024-06-11 20:01:57] [ INFO ] [OdontologoDaoH2:42] Listado de todos los odontologos en Memoria: [
+id: 1 - matricula: WWW222 - nombre: Pablo - apellido: Neruda
+, 
+id: 2 - matricula: YYY222 - nombre: Cacd Rmilo - apellido: Zapata
+]

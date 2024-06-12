@@ -3,9 +3,11 @@ package com.backend.ClinicaOdontologica.entity;
 public class Odontologo {
 
     private  Long id;
+
     private String Matricula;
     private String nombre;
     private String apellido;
+
         public Odontologo(String matricula, String nombre, String apellido) {
             Matricula = matricula;
             this.nombre = nombre;

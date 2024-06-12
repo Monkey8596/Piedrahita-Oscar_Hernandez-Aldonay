@@ -67,6 +67,11 @@ public class OdontologoDaoH2 implements IDao<Odontologo> {
         return odontologoRegistrado;
     }
 
+    @Override
+    public Odontologo buscarPorId(Long id) {
+        return null;
+    }
+
 
     @Override
     public List<Odontologo> listarTodos() {
