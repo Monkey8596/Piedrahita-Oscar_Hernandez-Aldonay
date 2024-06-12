@@ -32,3 +32,48 @@ id: 1 - matricula: WWW222 - nombre: Pablo - apellido: Neruda
 , 
 id: 2 - matricula: YYY222 - nombre: Cacd Rmilo - apellido: Zapata
 ]
+[2024-06-11 20:58:16] [ INFO ] [OdontologoDaoH2:107] Listado de todos los odontologos: [
+id: 1 - matricula: ABC123 - nombre: Digital - apellido: House
+, 
+id: 2 - matricula: ABC123 - nombre: Oscar - apellido: Piedrahita
+, 
+id: 3 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+, 
+id: 4 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+]
+[2024-06-11 20:58:16] [ INFO ] [OdontologoDaoH2:30] Se ha registrado el Odontologo En Memoria: 
+id: 3 - matricula: TTT789 - nombre: Memoria - apellido: Mora
+
+[2024-06-11 20:58:16] [ INFO ] [OdontologoDaoH2:42] Se ha registrado el Odontologo: 
+id: 5 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+
+[2024-06-11 20:58:16] [ INFO ] [OdontologoDaoH2:42] Listado de todos los odontologos en Memoria: [
+id: 1 - matricula: WWW222 - nombre: Pablo - apellido: Neruda
+, 
+id: 2 - matricula: YYY222 - nombre: Cacd Rmilo - apellido: Zapata
+]
+[2024-06-11 21:16:05] [ INFO ] [OdontologoDaoH2:107] Listado de todos los odontologos: [
+id: 1 - matricula: ABC123 - nombre: Digital - apellido: House
+, 
+id: 2 - matricula: ABC123 - nombre: Oscar - apellido: Piedrahita
+, 
+id: 3 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+, 
+id: 4 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+, 
+id: 5 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+]
+[2024-06-11 21:16:05] [ INFO ] [OdontologoDaoH2:30] Se ha registrado el Odontologo En Memoria: 
+id: 3 - matricula: TTT789 - nombre: Memoria - apellido: Mora
+
+[2024-06-11 21:16:05] [ INFO ] [OdontologoDaoH2:42] Se ha registrado el Odontologo: 
+id: 6 - matricula: ZZZ123 - nombre: Fausto - apellido: Dominguez
+
+[2024-06-11 21:16:05] [ INFO ] [OdontologoDaoH2:42] Listado de todos los odontologos en Memoria: [
+id: 1 - matricula: WWW222 - nombre: Pablo - apellido: Neruda
+, 
+id: 2 - matricula: YYY222 - nombre: Cacd Rmilo - apellido: Zapata
+]
+[2024-06-11 21:43:35] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts
+[2024-06-11 21:43:35] [ INFO ] [DomicilioDaoH2:100] Se ha encontrado el domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur
+[2024-06-11 21:43:35] [ INFO ] [PacienteDaoH2:117] Listado de todos los pacientes: [Id: 1 - Nombre: Emiliano - Apellido: Celli - DNI: 35464856 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 1 - Calle: Av Siempre Viva - Numero: 742 - Localidad: Springfield - Provincia: Massachusetts, Id: 2 - Nombre: Pablo - Apellido: Clemente - DNI: 3548546 - Fechas de ingreso: 2023-05-24 - Domicilio: Id: 2 - Calle: Calle Wallaby - Numero: 42 - Localidad: Sydney - Provincia: Nueva Gales del Sur]

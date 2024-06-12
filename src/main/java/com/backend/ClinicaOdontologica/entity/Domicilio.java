@@ -8,6 +8,9 @@ public class Domicilio {
     private String localidad;
     private String provincia;
 
+    public Domicilio() {
+    }
+
     public Domicilio(String calle, int numero, String localidad, String provincia) {
         this.calle = calle;
         this.numero = numero;
