@@ -4,7 +4,7 @@ import com.backend.ClinicaOdontologica.entity.Domicilio;
 import com.backend.ClinicaOdontologica.repository.IDao;
 import com.backend.ClinicaOdontologica.repository.dbconnection.H2Connection;
 //import org.slf4j.Logger;
-//import org.slf4j.LoggerFactory;
+import org.slf4j.LoggerFactory;
 
 import org.apache.log4j.Logger;
 

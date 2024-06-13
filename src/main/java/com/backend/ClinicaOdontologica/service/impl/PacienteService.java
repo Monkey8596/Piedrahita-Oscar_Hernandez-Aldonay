@@ -1,5 +1,7 @@
 package com.backend.ClinicaOdontologica.service.impl;
 
+import com.backend.ClinicaOdontologica.dto.entrada.PacienteEntradaDto;
+import com.backend.ClinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.ClinicaOdontologica.entity.Paciente;
 import com.backend.ClinicaOdontologica.repository.IDao;
 import com.backend.ClinicaOdontologica.service.IPacienteService;
@@ -16,12 +18,14 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public Paciente registrarPaciente(Paciente paciente) {
-        return pacienteIDao.registrar(paciente);
+    public PacienteSalidaDto registrarPaciente(PacienteEntradaDto pacienteEntradaDto) {
+
+        return null;
     }
 
     @Override
-    public List<Paciente> listarPacientes() {
-        return pacienteIDao.listarTodos();
+    public List<PacienteSalidaDto> listarPacientes() {
+
+        return null;
     }
 }

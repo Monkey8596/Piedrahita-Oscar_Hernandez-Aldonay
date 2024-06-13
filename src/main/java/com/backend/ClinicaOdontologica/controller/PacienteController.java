@@ -1,10 +1,13 @@
 package com.backend.ClinicaOdontologica.controller;
 
+import com.backend.ClinicaOdontologica.dto.entrada.PacienteEntradaDto;
+import com.backend.ClinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.ClinicaOdontologica.entity.Paciente;
 import com.backend.ClinicaOdontologica.service.IPacienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,13 +23,13 @@ public class PacienteController {
 
     //POST
     @PostMapping("/registrar")
-    public Paciente registartPaciente(@RequestBody Paciente paciente){
-        return pacienteService.registrarPaciente(paciente);
+    public PacienteSalidaDto registartPaciente(@RequestBody @Valid PacienteEntradaDto pacienteEntradaDto){
+        return pacienteService.registrarPaciente(pacienteEntradaDto);
     }
 
     // GET
     @GetMapping("/listar")
-    public List<Paciente> listarPacientes(){
+    public List<PacienteSalidaDto> listarPacientes(){
         return pacienteService.listarPacientes();
     }
 
