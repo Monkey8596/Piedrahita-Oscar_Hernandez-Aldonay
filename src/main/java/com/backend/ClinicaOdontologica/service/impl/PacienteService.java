@@ -62,7 +62,8 @@ public class PacienteService implements IPacienteService {
         if (pacienteBuscado != null){
             pacienteEncontrado = modelMapper.map(pacienteBuscado,PacienteSalidaDto.class);
             LOGGER.info("Paciente encontrado: {}", JsonPrinter.toString(pacienteEncontrado));
-        }else LOGGER.error("No se ha encontrado el paciente con id {}", id);
+        }else
+            LOGGER.error("No se ha encontrado el paciente con id {}", id);
 
         return pacienteEncontrado;
     }

@@ -4,7 +4,6 @@ import com.backend.ClinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.ClinicaOdontologica.dto.salida.PacienteSalidaDto;
 
 
-import javax.persistence.Id;
 import java.util.List;
 
 public interface IPacienteService {

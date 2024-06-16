@@ -7,7 +7,6 @@ import javax.validation.constraints.Positive;
 
 public class DomicilioEntradaDto {
 
-//    @NotNull(message = "El campo no puede ser nulo")
     @NotBlank(message = "El campo no puede estar en Blanco")
     private String calle;
 

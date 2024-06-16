@@ -2,9 +2,7 @@ package com.backend.ClinicaOdontologica.controller;
 
 import com.backend.ClinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.ClinicaOdontologica.dto.salida.PacienteSalidaDto;
-import com.backend.ClinicaOdontologica.entity.Paciente;
 import com.backend.ClinicaOdontologica.service.IPacienteService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("pacientes")
+@CrossOrigin
 
 public class PacienteController {
 
@@ -28,7 +27,6 @@ public class PacienteController {
     public ResponseEntity<PacienteSalidaDto> registartPaciente(@RequestBody @Valid PacienteEntradaDto pacienteEntradaDto){
         return new ResponseEntity<>(pacienteService.registrarPaciente(pacienteEntradaDto), HttpStatus.CREATED);
     }
-
 
     // GET
     @GetMapping("/listar")
