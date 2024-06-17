@@ -3,6 +3,7 @@ package com.backend.ClinicaOdontologica.service.impl;
 import com.backend.ClinicaOdontologica.dto.entrada.PacienteEntradaDto;
 import com.backend.ClinicaOdontologica.dto.salida.PacienteSalidaDto;
 import com.backend.ClinicaOdontologica.entity.Paciente;
+import com.backend.ClinicaOdontologica.exceptions.ResourceNotFoundException;
 import com.backend.ClinicaOdontologica.repository.PacienteRepository;
 import com.backend.ClinicaOdontologica.service.IPacienteService;
 import com.backend.ClinicaOdontologica.utils.JsonPrinter;
@@ -29,15 +30,15 @@ public class PacienteService implements IPacienteService {
     @Override
     public PacienteSalidaDto registrarPaciente(PacienteEntradaDto pacienteEntradaDto) {
 
-        LOGGER.info("PacienteEntradaDto: " + pacienteEntradaDto);
+        LOGGER.info("PacienteEntradaDto: " + JsonPrinter.toString(pacienteEntradaDto));
 
         Paciente paciente = modelMapper.map(pacienteEntradaDto, Paciente.class);
-        LOGGER.info("PacienteEntidad: " + paciente);
+        LOGGER.info("PacienteEntidad: " + JsonPrinter.toString(paciente));
 
         PacienteSalidaDto pacienteSalidaDto = modelMapper.map(pacienteRepository.save(paciente),
                 PacienteSalidaDto.class);
 
-        LOGGER.info("PacienteSalidaDto: " + pacienteSalidaDto);
+        LOGGER.info("PacienteSalidaDto: " + JsonPrinter.toString(pacienteSalidaDto));
         return pacienteSalidaDto;
     }
 
@@ -48,7 +49,7 @@ public class PacienteService implements IPacienteService {
                 .stream()
                 .map(paciente -> modelMapper.map(paciente, PacienteSalidaDto.class))
                 .toList();
-        LOGGER.info("Listado de todos los pacientes: {}", pacientes);
+        LOGGER.info("Listado de todos los pacientes: {}", JsonPrinter.toString(pacientes));
 
         return pacientes;
     }
@@ -69,11 +70,14 @@ public class PacienteService implements IPacienteService {
     }
 
     @Override
-    public void eliminarPaciente(Long id) {
+    public void eliminarPaciente(Long id) throws ResourceNotFoundException {
 
         if (buscarPacientePorId(id) != null){
             pacienteRepository.deleteById(id);
             LOGGER.warn("Se ha eliminado el paciente con el id {}", id);
+
+        } else {
+            throw new ResourceNotFoundException("No existe registro de paciente con id " + id);
         }
     }
 
@@ -92,7 +96,9 @@ public class PacienteService implements IPacienteService {
 
             pacienteRepository.save(pacienteAActualizar);
             pacienteSalidaDto = modelMapper.map(pacienteAActualizar, PacienteSalidaDto.class);
+
             LOGGER.warn("Paciente actualizado: {}", JsonPrinter.toString(pacienteSalidaDto));
+
         } else {
 
             LOGGER.error("No fue posible actualizar el paciente porque no se encuentra" +
