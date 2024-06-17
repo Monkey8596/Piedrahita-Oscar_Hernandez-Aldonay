@@ -1,6 +1,5 @@
 package com.backend.ClinicaOdontologica.dto.entrada;
 
-
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import javax.validation.Valid;
@@ -11,24 +10,24 @@ public class TurnoEntradaDto {
 
     @FutureOrPresent(message = "La fecha no puede ser anterior al día de hoy")
     @NotNull(message = "El campo no puede ser nulo")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss")
     private LocalDateTime fechaYHora;
 
     @NotNull(message = "El campo no puede ser nulo")
     @Valid
-    private Long odontologoSalidaDto;
+    private Long odontologoId;
 
     @NotNull(message = "El campo no puede ser nulo")
     @Valid
-    private Long pacienteSalidaDto;
+    private Long pacienteId;
 
     public TurnoEntradaDto() {
     }
 
-    public TurnoEntradaDto(LocalDateTime fechaYHora, Long odontologoSalidaDto, Long pacienteSalidaDto) {
+    public TurnoEntradaDto(LocalDateTime fechaYHora, Long odontologoId, Long pacienteId) {
         this.fechaYHora = fechaYHora;
-        this.odontologoSalidaDto = odontologoSalidaDto;
-        this.pacienteSalidaDto = pacienteSalidaDto;
+        this.odontologoId = odontologoId;
+        this.pacienteId = pacienteId;
     }
 
     public LocalDateTime getFechaYHora() {
@@ -39,19 +38,19 @@ public class TurnoEntradaDto {
         this.fechaYHora = fechaYHora;
     }
 
-    public Long getOdontologoSalidaDto() {
-        return odontologoSalidaDto;
+    public Long getOdontologoId() {
+        return odontologoId;
     }
 
-    public void setOdontologoSalidaDto(Long odontologoSalidaDto) {
-        this.odontologoSalidaDto = odontologoSalidaDto;
+    public void setOdontologoId(Long odontologoId) {
+        this.odontologoId = odontologoId;
     }
 
-    public Long getPacienteSalidaDto() {
-        return pacienteSalidaDto;
+    public Long getPacienteId() {
+        return pacienteId;
     }
 
-    public void setPacienteSalidaDto(Long pacienteSalidaDto) {
-        this.pacienteSalidaDto = pacienteSalidaDto;
+    public void setPacienteId(Long pacienteId) {
+        this.pacienteId = pacienteId;
     }
 }

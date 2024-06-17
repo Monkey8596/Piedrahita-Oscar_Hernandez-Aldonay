@@ -11,7 +11,6 @@ public class Turno {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(length = 20)
     private LocalDateTime fechaYHora;
 
     @OneToOne(cascade = CascadeType.ALL)
