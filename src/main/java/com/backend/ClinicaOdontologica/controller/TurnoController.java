@@ -3,6 +3,7 @@ package com.backend.ClinicaOdontologica.controller;
 
 import com.backend.ClinicaOdontologica.dto.entrada.TurnoEntradaDto;
 import com.backend.ClinicaOdontologica.dto.salida.TurnoSalidaDto;
+import com.backend.ClinicaOdontologica.exceptions.BadRequestException;
 import com.backend.ClinicaOdontologica.exceptions.ResourceNotFoundException;
 import com.backend.ClinicaOdontologica.service.ITurnoService;
 import org.springframework.http.HttpStatus;
@@ -25,7 +26,7 @@ public class TurnoController {
 
     //POST
     @PostMapping("/registrar")
-    public ResponseEntity<TurnoSalidaDto> registartTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto) throws ResourceNotFoundException {
+    public ResponseEntity<TurnoSalidaDto> registartTurno(@RequestBody @Valid TurnoEntradaDto turnoEntradaDto) throws ResourceNotFoundException, BadRequestException {
         return new ResponseEntity<>(turnoService.registrarTurno(turnoEntradaDto), HttpStatus.CREATED);
     }
 

@@ -8,6 +8,7 @@ import com.backend.ClinicaOdontologica.dto.salida.TurnoSalidaDto;
 import com.backend.ClinicaOdontologica.entity.Odontologo;
 import com.backend.ClinicaOdontologica.entity.Paciente;
 import com.backend.ClinicaOdontologica.entity.Turno;
+import com.backend.ClinicaOdontologica.exceptions.BadRequestException;
 import com.backend.ClinicaOdontologica.exceptions.ResourceNotFoundException;
 import com.backend.ClinicaOdontologica.repository.OdontologoRepository;
 import com.backend.ClinicaOdontologica.repository.PacienteRepository;
@@ -49,7 +50,7 @@ public class TurnoService implements ITurnoService {
 
     @Override
     @Transactional
-    public TurnoSalidaDto registrarTurno(TurnoEntradaDto turnoEntradaDto) {
+    public TurnoSalidaDto registrarTurno(TurnoEntradaDto turnoEntradaDto) throws BadRequestException {
 
         Turno turnoRegistrado = new Turno();
 
@@ -60,11 +61,19 @@ public class TurnoService implements ITurnoService {
 
         TurnoSalidaDto turnoSalidaDto = null;
 
-        if (odontologoSalidaDto == null || pacienteSalidaDto == null) {
+        if (odontologoSalidaDto == null && pacienteSalidaDto == null) {
 
-            LOGGER.error("No fue posible registrar el turno");
+            throw new BadRequestException("El odontologo y el paciente no existen");
 
-        } else {
+        } else if (odontologoSalidaDto == null) {
+
+            throw new BadRequestException("El odontologo no existe");
+
+        } else if (pacienteSalidaDto == null) {
+
+            throw new BadRequestException("El paciente no existe");
+
+        }
 
             LOGGER.info("TurnoEntradaDto: " + JsonPrinter.toString(turnoEntradaDto));
 
@@ -83,7 +92,7 @@ public class TurnoService implements ITurnoService {
             Turno turnoGuardado = turnoRepository.save(turnoRegistrado);
             turnoSalidaDto = convertToDto(turnoGuardado);
             LOGGER.info("Turno guardado con éxito: " + JsonPrinter.toString(turnoGuardado));
-        }
+
 
         return turnoSalidaDto;
 
