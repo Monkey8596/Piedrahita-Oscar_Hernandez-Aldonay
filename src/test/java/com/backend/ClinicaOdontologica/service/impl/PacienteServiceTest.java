@@ -28,10 +28,10 @@ class PacienteServiceTest {
 
     @Test
     @Order(1)
-    void deberiaRegistrarseUnPacienteDeNombreJuan_y_RetornarSuId(){
+    void deberiaRegistrarseUnPacienteDeNombreJuan_RetornarSuId_Y_VerificarQueElNombreRegistradoSeaJuan(){
 
         PacienteEntradaDto pacienteEntradaDto = new PacienteEntradaDto("Juan", "Perez",123456, LocalDate.of(2024,3,22),
-                new DomicilioEntradaDto("Calle",123,"Localidad", "Procincia"));
+                new DomicilioEntradaDto("Av. Central",123,"San Juan del Rio", "La Original"));
 
         PacienteSalidaDto pacienteSalidaDto = pacienteService.registrarPaciente(pacienteEntradaDto);
 
@@ -43,7 +43,7 @@ class PacienteServiceTest {
 
     @Test
     @Order(2)
-    void deberiaEliminarsePacienteConId(){
+    void deberiaEliminarsePacienteConId1(){
 
         assertDoesNotThrow(() -> pacienteService.eliminarPaciente(1L));
 

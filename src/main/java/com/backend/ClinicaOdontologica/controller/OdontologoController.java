@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-@RequestMapping("odontologos")
+@RequestMapping("/odontologos")
 @CrossOrigin
 public class OdontologoController {
 

@@ -44,6 +44,7 @@ public class OdontologoService implements IOdontologoService {
     }
 
     @Override
+
     public List<OdontologoSalidaDto> listarOdontologos() {
 
         List<OdontologoSalidaDto> odontologos = odontologoRepository.findAll()
@@ -101,7 +102,7 @@ public class OdontologoService implements IOdontologoService {
         } else {
 
             LOGGER.error("No fue posible actualizar el odontologo porque no se encuentra" +
-                    " en la dase de datos");
+                    " en la base de datos");
         }
 
         return odontologoSalidaDto;
