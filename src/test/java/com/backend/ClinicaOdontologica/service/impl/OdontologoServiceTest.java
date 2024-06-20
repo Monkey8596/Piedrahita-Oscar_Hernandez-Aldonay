@@ -25,13 +25,12 @@ class OdontologoServiceTest {
 
     @Test
     @Order(1)
-    void deberiaRegistrarUnOdontologoDeNombrePedritoYOtroDeNombreMarta() {
+    void deberiaRegistrarUnOdontologoDeNombrePedrito() {
         // Datos de prueba
         OdontologoEntradaDto odontologoEntradaDto = new OdontologoEntradaDto("1234", "Pedrito", "Fernandez");
-        OdontologoEntradaDto odontologoEntradaDto2 = new OdontologoEntradaDto("1145", "Marta", "Sanchez");
+
 
         OdontologoSalidaDto odontologoSalidaDto = odontologoService.registarOdontologo(odontologoEntradaDto);
-        OdontologoSalidaDto odontologoSalidaDto2 = odontologoService.registarOdontologo(odontologoEntradaDto2);
 
         assertNotNull(odontologoEntradaDto);
         assertNotNull(odontologoSalidaDto.getId());

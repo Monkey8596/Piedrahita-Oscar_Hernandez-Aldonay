@@ -52,10 +52,8 @@ class PacienteServiceTest {
     @Test
     @Order(3)
     void deberiaDevolverUnaListaVaciaDePacientes(){
-
         List<PacienteSalidaDto> listadoDePacientes = pacienteService.listarPacientes();
         assertTrue(listadoDePacientes.isEmpty());
 
     }
-
 }
