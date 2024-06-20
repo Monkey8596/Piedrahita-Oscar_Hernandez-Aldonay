@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odontólogos</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<div class="container">
+    <h1>Gestión de Odontólogos</h1>
+    <button class="home-button" onclick="irAHome()">Home</button>
+    <div class="menu">
+        <button onclick="listarOdontologos()">Listar Odontólogos</button>
+        <button onclick="buscarOdontologoPorId()">Buscar Odontólogo</button>
+        <button onclick="mostrarFormularioRegistro()">Registrar Odontólogo</button>
+        <button onclick="eliminarOdontologo()">Eliminar Odontólogo</button>
+    </div>
+    <div id="contenido"></div>
+</div>
+<script src="/js/odontologos.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
