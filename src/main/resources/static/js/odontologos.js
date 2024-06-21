@@ -11,7 +11,7 @@ function listarOdontologos() {
             contenido.innerHTML = '<h2>Lista de Odontólogos Registrados</h2>';
             let lista = '<ul>';
             data.forEach(odontologo => {
-                lista += `<li>${odontologo.id} ${odontologo.nombre} ${odontologo.apellido}</li>`;
+                lista += `<li>ID:${odontologo.id} - ${odontologo.nombre} ${odontologo.apellido}</li>`;
             });
             lista += '</ul>';
             contenido.innerHTML += lista;

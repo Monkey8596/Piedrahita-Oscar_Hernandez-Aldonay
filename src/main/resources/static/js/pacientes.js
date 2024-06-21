@@ -12,7 +12,7 @@ function listarPacientes() {
             contenido.innerHTML = '<h2>Lista de Pacientes Registrados</h2>';
             let lista = '<ul>';
             data.forEach(paciente => {
-                lista += `<li>${paciente.id} ${paciente.nombre} ${paciente.apellido}</li>`;
+                lista += `<li>ID:${paciente.id} - ${paciente.nombre} ${paciente.apellido}</li>`;
             });
             lista += '</ul>';
             contenido.innerHTML += lista;
@@ -76,8 +76,8 @@ function mostrarFormularioRegistro() {
                                <button type="submit">Registrar</button>
                            </form>`;
     document.getElementById('pacienteForm').addEventListener('submit', registrarPaciente);
-    let yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0]; // 86400000 milisegundos en un día
-    document.getElementById('fechaIngreso').setAttribute('min', yesterday);
+    let today = new Date().toISOString().split('T')[0];
+    document.getElementById('fechaIngreso').setAttribute('min', today);
 }
 
 function registrarPaciente(event) {
@@ -90,13 +90,6 @@ function registrarPaciente(event) {
     let numero = parseInt(document.getElementById('numero').value);
     let localidad = document.getElementById('localidad').value;
     let provincia = document.getElementById('provincia').value;
-
-    let yesterday = new Date(Date.now() - 86400000).toISOString().split('T')[0];
-
-    if (fechaIngreso < yesterday) {
-        alert('La fecha de ingreso no puede ser anterior a la fecha actual.');
-        return;
-    }
 
     let paciente = {
         nombre: nombre,
